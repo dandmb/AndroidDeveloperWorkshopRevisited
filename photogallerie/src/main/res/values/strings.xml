@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">practice</string>
+    <string name="next_button">Next</string>
+    <string name="prev_button">Previous</string>
+    <string name="no_next_item">No next item</string>
+    <string name="no_prev_item">No previous item</string>
+
+
+
+</resources>

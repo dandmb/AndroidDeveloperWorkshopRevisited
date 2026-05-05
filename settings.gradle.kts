@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "practice"
 include(":app")
 include(":tipsapp")
+include(":photogallerie")
