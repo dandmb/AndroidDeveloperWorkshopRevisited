@@ -11,9 +11,9 @@ The aim of this repo is to revisit android developer program exercises https://d
 2. Art Gallery project: Design, Adding MVVM and Unit tests
 <p>
 
-<img width="35%" height="600" alt="Screenshot_20260505_160540" src="https://github.com/user-attachments/assets/7cdccbaf-9801-47a3-97bd-91a384a1709a" />
+<img width="30%" height="600" alt="Screenshot_20260505_160540" src="https://github.com/user-attachments/assets/7cdccbaf-9801-47a3-97bd-91a384a1709a" />
 &nbsp;&nbsp;&nbsp;&nbsp;
-<img width="35%" height="600" alt="Screenshot_20260505_160549" src="https://github.com/user-attachments/assets/0d596a35-c6a1-42f2-9e2a-9730da3f4cc4" />
+<img width="30%" height="600" alt="Screenshot_20260505_160549" src="https://github.com/user-attachments/assets/0d596a35-c6a1-42f2-9e2a-9730da3f4cc4" />
 &nbsp;&nbsp;&nbsp;&nbsp;
 <img width="35%" height="600" alt="Screenshot_20260505_160607" src="https://github.com/user-attachments/assets/91f75fd0-0a08-4a20-867c-c1439380a876" />
 &nbsp;&nbsp;&nbsp;&nbsp;
