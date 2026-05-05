@@ -9,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.dmb25.photogallerie.presentation.GalleryLayout
 import com.dmb25.practice.ui.theme.PracticeTheme
 import com.dmb25.tipsapp.ui.TipsLayout
 import com.dmb25.tipsapp.ui.TipsViewModel
@@ -20,7 +21,9 @@ class MainActivity : ComponentActivity() {
         val viewModel: TipsViewModel by viewModels()
         setContent {
             PracticeTheme {
-                TipsLayout(viewModel)
+//                TipsLayout(viewModel)
+
+                GalleryLayout()
             }
         }
     }
