@@ -63,4 +63,11 @@ dependencies {
     implementation(libs.koin.compose.viewmodel)
     api(platform(libs.koin.bom))
 
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+
+    testImplementation(libs.mockk)
+    testImplementation(libs.turbine)
+    testImplementation(libs.kotlinx.coroutines.test)
+
 }

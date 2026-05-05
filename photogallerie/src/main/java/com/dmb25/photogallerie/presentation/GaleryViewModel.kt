@@ -59,7 +59,6 @@ class GaleryViewModel(
                 }
                 dataSize = it.size
             }
-
         }
     }
 
@@ -80,7 +79,7 @@ class GaleryViewModel(
     fun getPreviousImage(id: Int) {
         viewModelScope.launch {
             val previousItemPosition = id - 1
-            if (previousItemPosition >= 1) { // les IDs commencent à 1
+            if (previousItemPosition >= 1) {
                 val previousItem = galleryRepo.getGalleryById(previousItemPosition)
                 _uiState.update { currentState ->
                     currentState.copy(item = previousItem, isLoading = false, isError = "")

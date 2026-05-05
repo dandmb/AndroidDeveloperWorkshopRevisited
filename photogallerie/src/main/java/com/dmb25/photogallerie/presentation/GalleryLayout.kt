@@ -1,6 +1,5 @@
 package com.dmb25.photogallerie.presentation
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -27,19 +26,17 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import coil3.compose.AsyncImage
 import com.dmb25.photogallerie.R
 import com.dmb25.photogallerie.data.model.MyGallery
 import org.koin.androidx.compose.koinViewModel
@@ -60,6 +57,7 @@ fun GalleryLayout(viewModel: GaleryViewModel = koinViewModel()) {
                         duration = SnackbarDuration.Short
                     )
                 }
+
                 is UiEvent.NoPreviousItem -> {
                     snackbarHostState.showSnackbar(
                         message = "Pas d'élément précédent",
@@ -89,18 +87,19 @@ fun GalleryLayoutContent(
     state: UiState,
     snackbarHostState: SnackbarHostState = remember { SnackbarHostState() },
     onNextClick: (Int) -> Unit,
-    onPrevClick: (Int) -> Unit) {
+    onPrevClick: (Int) -> Unit
+) {
     Scaffold(
         snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
         topBar = {
             TopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primary,        // fond de la TopAppBar
-                    titleContentColor = MaterialTheme.colorScheme.onPrimary,   // couleur du titre
-                    navigationIconContentColor = MaterialTheme.colorScheme.onPrimary, // couleur icône nav
-                    actionIconContentColor = MaterialTheme.colorScheme.onPrimary      // couleur icônes action
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    titleContentColor = MaterialTheme.colorScheme.onPrimary,
+                    navigationIconContentColor = MaterialTheme.colorScheme.onPrimary,
+                    actionIconContentColor = MaterialTheme.colorScheme.onPrimary
                 ),
-                title = { Text("Gallery") }
+                title = { Text("Art Gallery") }
             )
         }
     ) { innerPadding ->
@@ -161,11 +160,11 @@ fun GalleryItem(item: MyGallery, onNextClick: (Int) -> Unit, onPrevClick: (Int) 
                     .background(Color.White)
                     .padding(32.dp)
             ) {
-                Image(
-                    painter = painterResource(id = item.image),
-                    contentDescription = null,
+                AsyncImage(
                     contentScale = ContentScale.Crop,
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize(),
+                    model = item.imageUrl,
+                    contentDescription = null
                 )
             }
         }
@@ -178,24 +177,6 @@ fun GalleryItem(item: MyGallery, onNextClick: (Int) -> Unit, onPrevClick: (Int) 
     }
 }
 
-@Composable
-fun AuthorImage(item: MyGallery, modifier: Modifier = Modifier) {
-    ElevatedCard(
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = 6.dp
-        ),
-        modifier = Modifier
-            .fillMaxWidth()
-
-    ) {
-        Image(
-            modifier = Modifier
-                .padding(50.dp),
-            painter = painterResource(id = item.image),
-            contentDescription = null
-        )
-    }
-}
 
 @Composable
 fun AuthorDetail(item: MyGallery) {
@@ -212,9 +193,9 @@ fun AuthorDetail(item: MyGallery) {
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onPrimaryContainer
         )
-        Row() {
+        Row {
             Text(
-                text = item.place,
+                text = item.author,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onPrimaryContainer
             )
@@ -256,11 +237,11 @@ fun GalleryLayoutPreview() {
     GalleryLayoutContent(
         state = UiState(
             item = MyGallery(
-                id = 1,
-                title = "Title",
-                place = "Place",
-                year = "2023",
-                image = R.drawable.image1
+                id = 2,
+                title = "Flowers in a Rococo Vase",
+                author = "Paul Cézanne",
+                year = "1876",
+                imageUrl = "https://mymodernmet.com/wp/wp-content/uploads/2017/12/free-images-national-gallery-of-art-8.jpg"
             ),
             isLoading = false,
             isError = ""
@@ -269,18 +250,4 @@ fun GalleryLayoutPreview() {
         onPrevClick = {}
     )
 
-}
-
-@Preview(showBackground = true)
-@Composable
-fun AuthorImagePreview() {
-    AuthorImage(
-        item = MyGallery(
-            id = 1,
-            title = "Title",
-            place = "Place",
-            year = "2023",
-            image = R.drawable.image1
-        )
-    )
 }
