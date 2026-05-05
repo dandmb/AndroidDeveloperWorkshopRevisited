@@ -1,5 +1,5 @@
 # AndroidDeveloperWorkshopRevisited
-The aim of this repo is to revisit android developer program exercises by adding unit tests in some of them and changing architecture in some of them. Each project is in a separate module which can be called in the MainActivity. <br> 
+The aim of this repo is to revisit android developer program exercises https://developer.android.com/courses/android-basics-compose/course?hl=fr by adding unit tests in some of them and changing architecture in some of them. Each project is in a separate module which can be called in the MainActivity. <br> 
 1. The first Two Screenshots are for the project calculating tips according to bill amount : 
 <p>
   <img width="35%" height="600" alt="Screenshot_20260504_214239" src="https://github.com/user-attachments/assets/f5fbb6cb-7751-4b49-abac-5a83e1cb569d">
