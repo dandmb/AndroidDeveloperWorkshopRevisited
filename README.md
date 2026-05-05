@@ -15,8 +15,8 @@ The aim of this repo is to revisit android developer program exercises https://d
 &nbsp;&nbsp;&nbsp;&nbsp;
 <img width="30%" height="600" alt="Screenshot_20260505_160549" src="https://github.com/user-attachments/assets/0d596a35-c6a1-42f2-9e2a-9730da3f4cc4" />
 &nbsp;&nbsp;&nbsp;&nbsp;
-<img width="35%" height="600" alt="Screenshot_20260505_160607" src="https://github.com/user-attachments/assets/91f75fd0-0a08-4a20-867c-c1439380a876" />
+<img width="30%" height="600" alt="Screenshot_20260505_160607" src="https://github.com/user-attachments/assets/91f75fd0-0a08-4a20-867c-c1439380a876" />
 &nbsp;&nbsp;&nbsp;&nbsp;
-<img width="35%" height="600" alt="Screenshot_20260505_160636" src="https://github.com/user-attachments/assets/10e57f3f-e472-40fa-b297-534bac30c775" />
+<img width="30%" height="600" alt="Screenshot_20260505_160636" src="https://github.com/user-attachments/assets/10e57f3f-e472-40fa-b297-534bac30c775" />
 </p>
 
